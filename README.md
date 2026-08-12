@@ -41,7 +41,7 @@ skills/generic-dev-sop/
 添加后启用 `vien-skills` 插件，`generic-dev-sop` skill 即可在任意对话中使用。本地开发时也可直接添加本地路径：
 
 ```text
-/plugin marketplace add ~/Desktop/working/vien_job/vien-skills
+/plugin marketplace add ~/<你的目录>/vien-skills
 ```
 
 **方式二：手动安装到单项目**
