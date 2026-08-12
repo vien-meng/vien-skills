@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "vien-skills",
+  "description": "从实际项目提炼的通用开发 SOP skills：默认技术栈、项目搭建、详细任务规划、单功能闭环与完整交付。",
+  "owner": {
+    "name": "vien-meng",
+    "url": "https://github.com/vien-meng"
+  },
+  "plugins": [
+    {
+      "name": "vien-skills",
+      "description": "generic-dev-sop：从零搭建新项目到完整交付的中文闭环流程（架构决策、任务计划、编码规范、审查清单、发布门禁）。",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
