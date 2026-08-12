@@ -56,6 +56,15 @@ cp -r skills/generic-dev-sop <你的项目>/.claude/skills/
 cp -r skills/generic-dev-sop ~/.claude/skills/
 ```
 
+**其他平台**
+
+本仓库按 ponytail 模式做了跨平台封装，skill 内容为纯 markdown，通用可移植：
+
+- **Kimi Code CLI**：SKILL.md 格式与 Claude Code 一致。`cp -r skills/generic-dev-sop ~/.kimi-code/skills/`（全局）或项目 `.kimi-code/skills/`（本地），用 `/skill:generic-dev-sop` 调用。
+- **Codex / OpenCode / Gemini**：读根目录 `AGENTS.md`，把本仓库作为项目上下文或复制 `AGENTS.md` 到项目根即生效；Codex 另有 `.codex-plugin/plugin.json`、Gemini 有 `gemini-extension.json`、OpenCode 有 `.opencode/command/generic-dev-sop.md` 斜杠命令。
+- **Cursor / Windsurf / Cline / Kiro**：规则文件已在 `.cursor/rules/`、`.windsurf/rules/`、`.clinerules/`、`.kiro/steering/`，把对应文件复制到你的项目同名目录即可生效。
+- **Devin**：`.devin-plugin/plugin.json` 元数据已提供。
+
 ### 用法
 
 新项目流程：先确认技术栈（用户指定，未指定或直接回车则用 `default-stack.md` 默认组合），按 `references/architecture-template.md` 产出架构决策、按 `references/task-plan-template.md` 产出任务计划，再按 `SKILL.md` 第一部分搭建工程底座；之后每个功能按第三部分闭环交付并回写 `references/features/<功能短名>.md` 开发记录；P0 完成后按第四部分走发布候选、灰度回滚、文档同步与项目交付检查。
