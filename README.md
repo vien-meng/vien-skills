@@ -72,14 +72,6 @@ cp -r skills/generic-dev-sop ~/.claude/skills/
 
 新项目流程：先确认技术栈（用户指定，未指定或直接回车则用 `default-stack.md` 默认组合），按 `references/architecture-template.md` 产出架构决策、按 `references/task-plan-template.md` 产出任务计划，再按 `SKILL.md` 第一部分搭建工程底座；之后每个功能按第三部分闭环交付并回写 `references/features/<功能短名>.md` 开发记录；P0 完成后按第四部分走发布候选、灰度回滚、文档同步与项目交付检查。
 
-### 来源
-
-由以下项目的实际开发 SOP 提炼共性后去项目化：
-
-- coral-music-desktop / coral-music-mobile（桌面与 Flutter 跨端客户端）
-- smart-cut / smart-cut-server（Web + Electron 编辑器与其 NestJS 服务端）
-- jiyu-flutter / jiyu-server（Flutter 三端 + NestJS 服务端）
-
 ## License
 
 Apache-2.0，见 [LICENSE](LICENSE)。
