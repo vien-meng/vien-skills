@@ -58,12 +58,15 @@ cp -r skills/generic-dev-sop ~/.claude/skills/
 
 **其他平台**
 
-本仓库按 ponytail 模式做了跨平台封装，skill 内容为纯 markdown，通用可移植：
+本仓库按 ponytail 模式做了跨平台封装，skill 内容为纯 markdown，通用可移植。各平台封装均按官方格式提供：
 
-- **Kimi Code CLI**：SKILL.md 格式与 Claude Code 一致。`cp -r skills/generic-dev-sop ~/.kimi-code/skills/`（全局）或项目 `.kimi-code/skills/`（本地），用 `/skill:generic-dev-sop` 调用。
-- **Codex / OpenCode / Gemini**：读根目录 `AGENTS.md`，把本仓库作为项目上下文或复制 `AGENTS.md` 到项目根即生效；Codex 另有 `.codex-plugin/plugin.json`、Gemini 有 `gemini-extension.json`、OpenCode 有 `.opencode/command/generic-dev-sop.md` 斜杠命令。
-- **Cursor / Windsurf / Cline / Kiro**：规则文件已在 `.cursor/rules/`、`.windsurf/rules/`、`.clinerules/`、`.kiro/steering/`，把对应文件复制到你的项目同名目录即可生效。
-- **Devin**：`.devin-plugin/plugin.json` 元数据已提供。
+- **Kimi Code CLI**：SKILL.md 格式与 Claude Code 一致（frontmatter `name`/`description`）。`cp -r skills/generic-dev-sop ~/.kimi-code/skills/`（全局）或项目 `.kimi-code/skills/`（本地），重启会话后用 `/skill:generic-dev-sop` 调用。
+- **Codex**：`codex plugin marketplace add vien-meng/vien-skills` 直接添加，再在 config 启用 `[plugins."vien-skills@vien-skills"] enabled = true`。
+- **OpenCode**：`cp -r .opencode/command/generic-dev-sop.md <项目>/.opencode/command/`，用 `/generic-dev-sop` 调用；或复制根 `AGENTS.md` 到项目根作为常驻上下文。如需原生 skill 语义，可把 `skills/generic-dev-sop/` 复制到项目 `.opencode/skills/`。
+- **Gemini CLI**：`gemini extensions install /path/to/vien-skills` 或 `gemini extensions install vien-meng/vien-skills`，安装后扩展根目录的 `AGENTS.md` 作为上下文生效（`gemini-extension.json` 的 `contextFileName` 指向它）。注意：不是放根目录自动生效，必须先 install。
+- **Cursor / Cline / Kiro**：把 `.cursor/rules/generic-dev-sop.mdc`、`.clinerules/generic-dev-sop.md`、`.kiro/steering/generic-dev-sop.md` 复制到你的项目同名目录即可自动生效（Cursor `alwaysApply: true`、Cline 全局规则、Kiro `inclusion: always`）。
+- **Windsurf**：把 `.windsurf/rules/generic-dev-sop.md` 复制到项目 `.windsurf/rules/`（frontmatter `trigger: always_on`，自动应用）。
+- **Devin**：`.devin-plugin/plugin.json` 元数据已提供，技能以 `/vien-skills:generic-dev-sop` 调用。
 
 ### 用法
 

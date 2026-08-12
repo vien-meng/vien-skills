@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "从实际项目提炼的通用项目开发 SOP skills：默认技术栈、项目搭建、详细任务规划、单功能开发闭环与完整交付。",
   "author": {
-    "name": "vien-meng",
-    "url": "https://github.com/vien-meng"
+    "name": "vien-meng"
   },
   "homepage": "https://github.com/vien-meng/vien-skills",
   "repository": "https://github.com/vien-meng/vien-skills",
